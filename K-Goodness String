@@ -1,0 +1,24 @@
+class Goodness:
+    def process(self,N,s,k)->int:
+        i = 0
+        goodnessScore = 0
+        minOperation = 0
+        while (i < (N//2) ):
+            index = s[( N-(2+i)+1 )]
+            if s[i] != index:
+                goodnessScore += 1
+            i += 1
+        if goodnessScore == k:
+            minOperation = 0
+        else:
+            minOperation = abs(goodnessScore-k)
+        return minOperation
+if __name__ == "__main__":
+    T = int(input())
+    obj = Goodness()
+    for i in range(T):
+        N,k = map(int,input().split())
+        s = input()
+        minOperation = obj.process(N,s,k)
+        print("Case #{0}: {1}".format(i+1,str(minOperation)))
+ 
