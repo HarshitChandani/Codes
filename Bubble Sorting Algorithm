@@ -1,0 +1,21 @@
+## Bubble sort is one the sorting algorithms from a set of sorting algorithms
+## Time Complexity: 
+##    Best Case: O(n)
+##    Wrost and Moderate Case: O(n*n)
+
+
+
+arr = [64, 34, 25, 12, 22, 11, 90,0,250,50,500,100,62,100,100,0,0,0,11,11,11,11,11,11,11]
+i =0
+z = len(arr)
+swapped = False
+while (i != (z-1)):
+  swapped = False
+  for j in range(i+1,z):
+    if arr[j-1] > arr[j]:
+      arr[j-1],arr[j] = arr[j],arr[j-1]
+      swapped = True
+  if swapped == False:
+    break
+  z -= 1
+print(arr)
